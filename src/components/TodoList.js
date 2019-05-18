@@ -1,11 +1,12 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 class TodoList extends Component{
   render(){
     const {todos, onDeleteClick, onTodoClick} = this.props;
     let list = []
-    todos.map(todo => {
+    todos.forEach(todo => {
       list.push(
         <div style={{display:'flex', flexDirection: 'row', alignItems: 'center'}}>
           <Todo

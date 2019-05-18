@@ -1,4 +1,3 @@
-
 function todos(state = [], action){
   switch (action.type) {
     case 'TODOS_RECEIVE_DATA':
@@ -20,19 +19,19 @@ function todos(state = [], action){
     case 'UPDATE_TASK_ERROR':
     case 'DELETE_TASK_ERROR':
       alert(action.message)
-
+      return state
     case 'ADD_TODO':
-    return [
-      ...state,
-      {
-        key: action.data.key,
-        text: action.data.text,
-        completed: action.data.completed,
-      }
-    ]
+      return [
+        ...state,
+        {
+          key: action.data.key,
+          text: action.data.text,
+          completed: action.data.completed,
+        }
+      ]
 
     case 'CHANGE_TODO':
-      state.map(todo => {
+      state.forEach(todo => {
         if(todo.key === action.data.key){
           todo.completed = !todo.completed;
         }
