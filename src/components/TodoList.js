@@ -8,9 +8,14 @@ class TodoList extends Component{
     let list = []
     todos.forEach(todo => {
       list.push(
-        <div style={{display:'flex', flexDirection: 'row', alignItems: 'center'}}>
+        <div
+          key={todo.key}
+          style={{
+            display:'flex',
+            flexDirection: 'row',
+            alignItems: 'center'
+          }}>
           <Todo
-            key={todo.key}
             text={todo.text}
             completed={todo.completed}
             onClick={() => onTodoClick(todo.key)}
