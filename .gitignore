@@ -16,4 +16,6 @@ npm-debug.log
 .idea/
 
 # config for firebase
+.firebaserc
+.firebase/
 src/firebase/config.js
